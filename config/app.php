@@ -1,5 +1,6 @@
 <?php
 
+use CisConfig\CisConfigServiceProvider;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -16,6 +17,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'version' => env('APP_VERSION',null),
 
     /*
     |--------------------------------------------------------------------------
@@ -194,7 +196,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        CisConfig\CisConfigServiceProvider::class,
     ],
 
     /*

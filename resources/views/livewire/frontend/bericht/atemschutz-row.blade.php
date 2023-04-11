@@ -4,7 +4,7 @@
             <i class="fa fa-spinner animate-spin"></i>
         </span>
     </td>
-    <td>{{ $user->fullname() }}</td>
+    <td>{{ $user->lastname }}, {{ $user->firstname }}</td>
     <td>
         <input type="text" class="border-0 bg-slate-200 rounded p-2 w-20" wire:model.lazy="pa_nr" wire:model.debounce.1s="pa_nr">
     <td>

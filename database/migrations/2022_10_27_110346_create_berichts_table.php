@@ -17,6 +17,8 @@ return new class extends Migration
             $table->uuid('cis_row_id')->primary()->unique()->key();
             $table->boolean('is_closed')->default(0);
             $table->string('created_by')->key();
+            $table->string('closed_by')->nullable();
+            $table->dateTime('closed_at')->nullable();
             $table->string('type');
             $table->softDeletes();
             $table->timestamps();

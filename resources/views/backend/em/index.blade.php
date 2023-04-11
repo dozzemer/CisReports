@@ -19,15 +19,39 @@
                     <th>FMS-Name</th>
                     <th>Erstellt</th>
                     <th>Geändert</th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($einsatzmittel as $em)
-                    <tr onclick="window.location.href='{{ route("backend.em.edit",$em->cis_row_id) }}'">
-                        <td>{{ $em->name }}</td>
-                        <td>{{ $em->fmsname }}</td>
-                        <td>{{ $em->created_at->format("d.m.Y, H:i") }} Uhr</td>
-                        <td>{{ $em->updated_at->format("d.m.Y, H:i") }} Uhr</td>
+                    <tr>
+                        <td onclick="window.location.href='{{ route("backend.em.edit",$em->cis_row_id) }}'">{{ $em->name }}</td>
+                        <td onclick="window.location.href='{{ route("backend.em.edit",$em->cis_row_id) }}'">{{ $em->fmsname }}</td>
+                        <td onclick="window.location.href='{{ route("backend.em.edit",$em->cis_row_id) }}'">{{ $em->created_at->format("d.m.Y, H:i") }} Uhr</td>
+                        <td onclick="window.location.href='{{ route("backend.em.edit",$em->cis_row_id) }}'">{{ $em->updated_at->format("d.m.Y, H:i") }} Uhr</td>
+                        <td>
+                            @if(!$loop->last)
+                            <form action="{{ route("backend.em.order.higher") }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="einsatzmittel" value="{{ $em->cis_row_id }}">
+                                <button type="submit">
+                                    <i class="fa fa-arrow-down"></i>
+                                </button>
+                            </form>
+                            @endif
+                        </td>
+                        <td>
+                            @if(!$loop->first)
+                            <form action="{{ route("backend.em.order.lower") }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="einsatzmittel" value="{{ $em->cis_row_id }}">
+                                <button type="submit">
+                                    <i class="fa fa-arrow-up"></i>
+                                </button>
+                            </form>
+                            @endif
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

@@ -78,6 +78,9 @@ Route::middleware([Installed::class,CheckAppAndDBVersion::class])->prefix('Appli
         Route::get('/Backend/Em/Edit/{einsatzmittel}',[\App\Http\Controllers\Backend\EinsatzmittelController::class,'edit'])->name("backend.em.edit");
         Route::post('/Backend/Em/Edit/{einsatzmittel}',[\App\Http\Controllers\Backend\EinsatzmittelController::class,'update'])->name("backend.em.update");
         Route::post('/Backend/Em/Delete/{einsatzmittel}',[\App\Http\Controllers\Backend\EinsatzmittelController::class,'delete'])->name("backend.em.delete");
+        Route::post('/Backend/Em/Order/Higher',[\App\Http\Controllers\Backend\EinsatzmittelController::class,'orderHigher'])->name("backend.em.order.higher");
+        Route::post('/Backend/Em/Order/Lower',[\App\Http\Controllers\Backend\EinsatzmittelController::class,'orderLower'])->name("backend.em.order.lower");
+
 
         /** Funktionen */
         Route::get('/Backend/Job',[\App\Http\Controllers\Backend\JobController::class,'index'])->name("backend.job");

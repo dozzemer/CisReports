@@ -1,5 +1,5 @@
 <tr>
-    <td>{{ $user->fullname() }}</td>
+    <td>{{ $user->lastname }}, {{ $user->firstname }}</td>
     <td>
         <select wire:model="job" class="p-1 @if($job != $defaultJob) bg-red-200 @endif">
             @foreach($jobs as $j)

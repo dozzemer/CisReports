@@ -156,9 +156,11 @@
                                                             @endif
                                                             @foreach($personalBerichts->where('einsatzmittel',$em->cis_row_id) as $personal)
                                                                 <p>
-                                                                    {{ $users->where('cis_row_id',$personal->user)->first()->fullname() }}
+                                                                    {{ $users->where('cis_row_id',$personal->user)->first()->lastname }}, {{ $users->where('cis_row_id',$personal->user)->first()->firstname }}
                                                                     @if($personal->job)
+                                                                        @if(!$jobs->where('cis_row_id',$personal->job)->first()->fahrzeug)
                                                                         ( {{ $jobs->where('cis_row_id',$personal->job)->first()->name }} )
+                                                                        @endif
                                                                     @endif
                                                                 </p>
                                                             @endforeach
@@ -191,6 +193,7 @@
                                                                 <p>PA-Nummer: {{ $personal->pa_nr }}</p>
                                                                 <p>PA-Tragzeit (min.): {{ $personal->pa_time }}</p>
                                                                 <p>PA-Tätigkeit: {{ $personal->pa_work }}</p>
+                                                                <br>
                                                             @endforeach
                                                         @endif
                                                     </div>

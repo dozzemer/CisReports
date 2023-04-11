@@ -25,11 +25,11 @@ class Personaleditor extends Component
     public function mount(Bericht $bericht) {
         $this->bericht = $bericht;
         $this->jobs = Job::orderBy('fahrzeug')->get();
-        $this->einsatzmittel = Einsatzmittel::all();
+        $this->einsatzmittel = Einsatzmittel::orderBy('order')->get();
         foreach($this->einsatzmittel as $em) {
             $em->mannschaft = 0;
         }
-        $this->users = User::all();
+        $this->users = User::orderBy('lastname')->get();
         $this->personalUpdate();
     }
 

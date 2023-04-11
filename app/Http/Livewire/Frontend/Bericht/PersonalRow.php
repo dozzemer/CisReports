@@ -24,7 +24,7 @@ class PersonalRow extends Component
     public function mount(Bericht $bericht, User $user) {
         $this->user = $user;
         $this->bericht = $bericht;
-        $this->einsatzmittel = Einsatzmittel::all();
+        $this->einsatzmittel = Einsatzmittel::orderBy('order')->get();
         $this->jobs = Job::all();
         if(!$this->personalBericht = PersonalBericht::where('user',$this->user->cis_row_id)->where('bericht',$this->bericht->cis_row_id)->first()) {
             $this->personalBericht = new PersonalBericht();

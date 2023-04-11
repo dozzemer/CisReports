@@ -17,8 +17,8 @@
             <div class="cis-form-group">
                 <label for="fahrzeug">Standardfunktion</label>
                 <select name="fahrzeug">
-                    <option value="1" @if(old("fahrzeug") == "1") selected @endif>Ja</option>
-                    <option value="0" @if(old("fahrzeug") == "0") selected @endif>Nein</option>
+                    <option value="1" @if(old("fahrzeug",0) == "1") selected @endif>Ja</option>
+                    <option value="0" @if(old("fahrzeug",0) == "0") selected @endif>Nein</option>
                 </select>
             </div>
 

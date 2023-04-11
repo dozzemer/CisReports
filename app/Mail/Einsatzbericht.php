@@ -36,7 +36,10 @@ class Einsatzbericht extends Mailable
     {
         $this->bericht = $bericht;
         $this->personalBerichts = PersonalBericht::where('bericht',$bericht->cis_row_id)->orderBy('job')->get();
-        $this->einsatzmittel = Einsatzmittel::all();
+        $this->personalBerichts->sortBy(function($query) {
+            return $query->personal->lastname;
+        });
+        $this->einsatzmittel = Einsatzmittel::orderBy('order')->get();
         $this->users = User::all();
         $this->jobs = Job::all();
         $this->berichtTexts = BerichtText::where('cis_row_id_bericht',$bericht->cis_row_id)->get();

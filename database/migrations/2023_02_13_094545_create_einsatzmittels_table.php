@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('cis_row_id')->primary()->unique()->key();
             $table->text('fmsname');
             $table->text('name');
+            $table->integer('order');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -44,6 +44,7 @@
             </div>
         </div>
 
+        @include("layout.error_success")
         @yield("content")
     </div>
 

@@ -14,4 +14,9 @@ class AuthController extends Controller
         }
         return view("layout.auth");
     }
+
+    public function signOut() {
+        auth()->logout();
+        return redirect()->route("application");
+    }
 }

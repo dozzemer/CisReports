@@ -11,8 +11,9 @@
 </head>
     <body class="@stack("body_classes")" style="@stack("body_styles") font-family: 'Nunito', sans-serif;">
 
-        @yield("body")
-
+        <div class="max-w-5xl mx-auto mt-10">
+            @yield("body")
+        </div>
         @livewireScripts
     </body>
 </html>

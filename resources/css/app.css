@@ -1,51 +1,58 @@
+@import 'cis/cis-table.css';
+
 @tailwind base;
 @tailwind components;
-
-
-.cis-headline {
-    @apply text-slate-700 font-bold text-2xl my-6
-}
-
-.cis-panel {
-    @apply p-4 bg-slate-50 rounded shadow text-slate-600
-}
-
-.cis-panel-headline {
-    @apply border-b mb-3 pb-3 font-bold
-}
-.cis-prev {
-    @apply bg-slate-400 text-white p-1 rounded shadow text-xs
-}
-
-.cis-form-group {
-    @apply mb-2
-}
-
-.cis-form-group > div {
-    @apply text-sm
-}
-.cis-form-group > input {
-    @apply p-2 rounded border w-full
-}
-
-.cis-form-group > select {
-    @apply p-2 rounded border w-full bg-white
-}
-
-.is-invalid {
-    @apply border-red-500
-}
-
-.cis-submit {
-    @apply mt-4 bg-green-600 p-2 rounded text-white
-}
-
-.cis-success {
-    @apply bg-green-200 border-green-500 border p-2 text-green-800 rounded shadow my-3 text-xs
-}
-
-.cis-backlink {
-    @apply mb-2 bg-slate-700
-}
-
 @tailwind utilities;
+
+@layer components {
+    .cis-headline {
+        @apply text-slate-700 font-bold text-2xl my-6
+    }
+
+    .cis-panel {
+        @apply p-4 bg-slate-50 rounded shadow text-slate-600
+    }
+
+    .cis-panel-headline {
+        @apply border-b mb-3 pb-3 font-bold
+    }
+    .cis-prev {
+        @apply bg-slate-400 text-white p-1 rounded shadow text-xs
+    }
+
+    .cis-form-group {
+        @apply mb-2
+    }
+
+    .cis-form-group > div {
+        @apply text-sm
+    }
+    .cis-form-group > input {
+        @apply p-2 rounded border w-full
+    }
+
+    .cis-form-group > select {
+        @apply p-2 rounded border w-full bg-white
+    }
+
+    .is-invalid {
+        @apply border-red-500
+    }
+
+    .cis-submit {
+        @apply mt-4 bg-green-600 p-2 rounded text-white
+    }
+
+    .cis-success {
+        @apply bg-green-200 border-green-500 border p-2 text-green-800 rounded shadow my-3 text-xs
+    }
+
+    .cis-backlink {
+        @apply mb-2 bg-slate-700
+    }
+
+    h1 {
+        @apply text-xl font-semibold mb-4
+    }
+}
+

@@ -31,9 +31,23 @@
         <tbody>
             @foreach($users as $user)
                 <tr onclick="window.location='{{ route('backend.users.show',$user->cis_row_id) }}';" class="cursor-pointer hover:bg-slate-100">
-                    <td class="p-2 border-t">{{ $user->firstname }}</td>
-                    <td class="p-2 border-t">{{ $user->lastname }}</td>
-                    <td class="p-2 text-left border-t">{{ $user->email }}</td>
+                    <td class="p-2 border-t">
+                        @if(!$user->group_user)
+                        {{ $user->firstname }}
+                       @else
+                        GROUP-USER
+                        @endif
+                    </td>
+                    <td class="p-2 border-t">
+                        @if(!$user->group_user)
+                        {{ $user->lastname }}
+                        @endif
+                    </td>
+                    <td class="p-2 text-left border-t">
+                        @if(!$user->group_user)
+                        {{ $user->email }}
+                        @endif
+                    </td>
                     @if($user_auth_method == "username")
                     <td class="p-2 text-left border-t">{{ $user->username }}</td>
                     @endif

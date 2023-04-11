@@ -13,9 +13,27 @@ return [
         'icon' => 'user',
     ],
     [
+        'name' => 'em',
+        'text' => 'Einsatzmittel',
+        'route' => 'backend.em',
+        'icon' => 'truck',
+    ],
+    [
+        'name' => 'jobs',
+        'text' => 'Funktionen',
+        'route' => 'backend.job',
+        'icon' => 'hammer',
+    ],
+    [
         'name' => 'settings',
         'text' => 'Einstellungen',
         'route' => 'backend.settings',
         'icon' => 'cog',
-    ]
+    ],
+    [
+        'name' => 'frontend',
+        'text' => 'Anwenderebene',
+        'route' => 'application',
+        'icon' => 'right-to-bracket',
+    ],
 ];

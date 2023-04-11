@@ -11,6 +11,7 @@
                 <i class="fa fa-user"></i> Stammdaten
             </div>
             <div class="pr-12">
+                @if(!$user->group_user)
                 <p class="text-xs">Vorname</p>
                 <p class="font-bold mb-4">{{ $user->firstname }}</p>
 
@@ -19,13 +20,15 @@
 
                 <p class="text-xs">E-Mail Adresse</p>
                 <p class="font-bold mb-4">{{ $user->email }}</p>
-
+                @endif
                 @if($userAuthMethod == "username")
                 <p class="text-xs">Benutzername</p>
                 <p class="font-bold mb-4">{{ $user->username }}</p>
                 @endif
             </div>
+            @if(!$user->group_user)
             <a href="{{ route("backend.users.edit",$user) }}" class="bg-slate-500 text-white text-xs p-1 rounded shadow">Stammdaten ändern</a>
+            @endif
         </div>
 
         <div class="cis-panel">
@@ -37,6 +40,7 @@
             </div>
         </div>
 
+        @if(!$user->group_user)
         <div class="cis-panel">
             <div class="cis-panel-headline">
                 <i class="fa fa-lock"></i> Zugriff
@@ -45,6 +49,7 @@
                 @livewire("backend.user.access",['user' => $user])
             </div>
         </div>
+        @endif
 
         <div class="cis-panel">
             <div class="cis-panel-headline">

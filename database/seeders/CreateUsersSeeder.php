@@ -33,15 +33,16 @@ class CreateUsersSeeder extends Seeder
 
         DB::table('users')->insert([
             'cis_row_id' => Str::uuid(),
-            'firstname' => 'Max',
-            'lastname' => 'Mustermann',
-            'username' => 'max.mustermann',
-            'password' => Hash::make('password'),
+            'firstname' => 'Group',
+            'lastname' => 'User',
+            'username' => 'group',
+            'password' => Hash::make('group'),
             'backend_access' => false,
-            'email' => 'max@mustermann.de',
+            'email' => 'group@group.de',
             'email_verified_at' => Carbon::now(),
             'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
+            'updated_at' => Carbon::now(),
+            'group_user' => 1,
         ]);
 
         DB::table('users')->insert([

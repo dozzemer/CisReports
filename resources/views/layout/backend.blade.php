@@ -6,7 +6,7 @@
 
 @section("body")
 
-<div class="block md:flex w-screen h-screen">
+<div class="block md:flex w-screen lg:max-w-6xl mx-auto h-screen">
     <div class="md:w-80 md:h-full overflow-y-scroll text-center">
         <!-- Menu //-->
         <div class="text-sm flex items-center mt-5 text-slate-800 font-bold border-b border-slate-300 mx-8 pb-3">

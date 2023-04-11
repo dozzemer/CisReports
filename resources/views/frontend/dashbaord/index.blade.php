@@ -2,31 +2,23 @@
 
 @section("content")
 
-@if(auth()->check() && auth()->user()->backend_access)
-<div class="grid grid-flow-col auto-cols-max gap-4 mb-4">
-    <div class="cis-panel bg-indigo-100">
-        <div class="cis-panel-headline border-indigo-200">
-            <i class="fa fa-cog"></i> Verwaltung
+<a href="{{ route("bericht.create-bericht") }}">
+    <div class="h-20 items-center flex">
+        <div class="h-full flex items-center justify-center flex-col bg-gradient-to-b from-slate-50 to-slate-200 border border-slate-300 text-slate-600 shadow px-10 text-center">
+            <i class="fa fa-plus-circle text-2xl"></i>
+            <p class="text-sm">Bericht erstellen</p>
         </div>
-        <p class="mb-3">
-            Sie sind mit Verwaltungsrechten angemeldet.
-        </p>
-        <a href="#">Zum verwaltungsbereich...</a>
     </div>
-  </div>
-@endif
+</a>
 
-<div class="cis-panel">
+<div class="cis-panel mt-4">
     <div class="cis-panel-headline">
-        <i class="fa fa-keyboard"></i> Einsatzbereichte
+        <i class="fa fa-keyboard"></i> offene Berichte
     </div>
 
     <div class="text-center p-5">
-        <p class="text-3xl">keine Einsatzberichte vorhanden</p>
-        <p>... hier gibt es nichts zu tun.</p>
-        <i class="fa fa-wand-magic-sparkles text-4xl mt-5"></i>
+        @livewire("frontend.bericht.open-berichts")
     </div>
-
 </div>
 
 @endsection

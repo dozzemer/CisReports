@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('berichts', function (Blueprint $table) {
             $table->uuid('cis_row_id')->primary()->unique()->key();
+            $table->boolean('is_closed')->default(0);
+            $table->string('created_by')->key();
+            $table->string('type');
             $table->softDeletes();
             $table->timestamps();
         });

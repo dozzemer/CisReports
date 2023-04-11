@@ -1,0 +1,17 @@
+@layer components {
+    .cis-table {
+        @apply w-full font-light text-slate-700 text-sm
+    }
+
+    .cis-table > tbody > tr {
+        @apply hover:bg-slate-100 cursor-pointer
+    }
+
+    .cis-table > thead > tr > th {
+        @apply p-2 text-left
+    }
+
+    .cis-table > tbody > tr > td {
+        @apply p-2 border-t
+    }
+}

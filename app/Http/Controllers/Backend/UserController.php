@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\StoreUserRequest;
 use App\Http\Requests\Backend\UpdateUserRequest;
+use App\Http\Requests\StoreGroupUserRequest;
 use App\Models\User;
 use CisConfig\Facades\Config;
 
@@ -19,6 +20,24 @@ class UserController extends Controller
         return view('backend.users.create',[
             'userAuthMethod' => $userAuthMethod,
         ]);
+    }
+
+    public function createGroupUser() {
+        $userAuthMethod = Config::get('user_auth_method');
+        return view('backend.groupuser.create',[
+            'userAuthMethod' => $userAuthMethod,
+        ]);
+    }
+
+    public function storeGroupUser(StoreGroupUserRequest $request) {
+        $user = new User();
+        $user->username = $request->get('username');
+        $user->firstname = 'Group';
+        $user->lastname = 'User';
+        $user->group_user = 1;
+        $user->email = 'group@user.de';
+        $user->save();
+        return redirect()->route("backend.users.show",$user);
     }
 
     public function edit(User $user) {

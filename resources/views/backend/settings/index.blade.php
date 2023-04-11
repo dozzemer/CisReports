@@ -1,7 +1,7 @@
 @extends("layout.backend")
 
 @section("content")
-<div class="p-6">
+<div>
     <h1 class="text-slate-700 font-bold text-2xl my-6">Einstellungen</h1>
     @include("layout.error_success")
     <div class="cis-panel">

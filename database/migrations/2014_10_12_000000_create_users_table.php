@@ -19,9 +19,10 @@ return new class extends Migration
             $table->string('lastname');
             $table->boolean('backend_access')->default(0);
             $table->string('username')->unique();
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->smallInteger('group_user')->nullable()->default('0');
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

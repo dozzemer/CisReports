@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\Application;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
 class ApplicationController extends Controller
 {
-    public function frontend() {
-
-    }
-
-    public function backend() {
+    /**
+     * @return Application|Factory|View
+     */
+    public function backend(): Application|Factory|View
+    {
         return view("layout.backend");
     }
 }

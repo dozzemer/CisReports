@@ -6,6 +6,12 @@
                 <option value="{{ $j->cis_row_id }}">{{ $j->name }}</option>
             @endforeach
         </select>
+
+        @error("dobble")
+            <p class="text-xs">
+                (Doppelvergabe nicht möglich)
+            </p>
+        @enderror
     </td>
     @foreach($einsatzmittel as $em)
         <td>

@@ -8,7 +8,7 @@ use Livewire\Component;
 class EditBericht extends Component
 {
 
-    public $tab = 'overview';
+    public $tab = 'text';
 
     public $bericht;
 

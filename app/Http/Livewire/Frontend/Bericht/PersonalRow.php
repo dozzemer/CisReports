@@ -51,6 +51,18 @@ class PersonalRow extends Component
 
     public function updatedJob()
     {
+        $selectedJobObject = $this->jobs->where('cis_row_id',$this->job)->first();
+
+        /** Wenn kein Standardjob => Prüfen auf dopplung */
+        if(!$selectedJobObject->fahrzeug) {
+            foreach(PersonalBericht::where('bericht',$this->bericht->cis_row_id)->get() as $row) {
+                if($row->job == $selectedJobObject->cis_row_id && $row->einsatzmittel == $this->personalBericht->einsatzmittel) {
+                    $this->job = $this->personalBericht->job;
+                    $this->addError('dobble','Die Doppelvergabe dieser Funktion auf einem Fahrzeug ist nicht möglich.');
+                    return;
+                }
+            }
+        }
         $this->personalBericht->job = $this->job;
         $this->personalBericht->save();
     }

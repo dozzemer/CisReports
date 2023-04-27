@@ -1,8 +1,5 @@
 <div class="bg-slate-50 border border-slate-400">
     <div class="flex">
-        <div wire:click="selectTab('overview')" class="bg-slate-50 h-12 px-4 border-r text-sm border-slate-300 flex items-center @if($tab == "overview") font-bold @else border-b hover:bg-slate-100 cursor-pointer @endif ">
-            Stammdaten
-        </div>
         @if(!auth()->user()->group_user)
         <div wire:click="selectTab('text')" class="bg-slate-50 h-12 px-4 border-r text-sm border-slate-300 flex items-center @if($tab == "text") font-bold @else border-b hover:bg-slate-100 cursor-pointer @endif ">
             Berichtstexte

@@ -1,4 +1,5 @@
 <div>
+    @include("layout.error_success")
     <table class="cis-table">
         <thead>
             <th>Name</th>

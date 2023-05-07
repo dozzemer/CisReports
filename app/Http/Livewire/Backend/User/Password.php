@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Backend\User;
 
+use App\Models\InitialLogin;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
@@ -34,5 +35,6 @@ class Password extends Component
         $this->user->password = Hash::make($this->password);
         $this->user->save();
         $this->success = true;
+        $this->emit('password-changed');
     }
 }

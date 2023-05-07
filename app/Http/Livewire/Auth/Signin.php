@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Models\InitialLogin;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -29,6 +30,12 @@ class Signin extends Component
                 $this->addError('auth-error', 'Benutzerschlüssel und / oder Passwort falsch.');
                 return false;
             }
+        }
+
+        if(InitialLogin::where('cis_row_id_user',auth()->user()->cis_row_id)->count()) {
+            $this->addError('auth-error', 'Dieses Konto ist nicht eingerichtet. Bitte verwenden Sie ihren Willkommenscode oder wenden sich an den Administrator.');
+            Auth::logout();
+            return false;
         }
 
         $user = User::where('email',$this->user_key)->orWhere('username',$this->user_key)->first();

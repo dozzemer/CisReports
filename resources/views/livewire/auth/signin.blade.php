@@ -11,7 +11,8 @@
             <input type="password" wire:model="user_password" class="border-b w-full my-2 p-3 text-sm" placeholder="PASSWORT">
         </div>
         <div class="ml-2 text-xs text-blue-600 font-bold mt-4">
-            <a href="#">Passwort vergessen?</a>
+            <a href="#">Passwort vergessen?</a> |
+            <a href="{{ route("initial-login.index") }}">Erste Anmeldung</a>
         </div>
 
         <button type="submit" class="p-2 rounded-full bg-blue-600 text-white w-full mt-20 hover:bg-blue-500">Anmelden <i class="fa fa-right-to-bracket"></i> </button>

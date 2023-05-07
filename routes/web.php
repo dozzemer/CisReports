@@ -42,6 +42,13 @@ Route::middleware([Installed::class,CheckAppAndDBVersion::class])->prefix('Appli
     Route::post('/Sign-In',[AuthController::class,'submitSignIn'])->name("sign-in.submit");
     Route::post('/Sign-Out',[AuthController::class,'signOut'])->name("sign-out");
 
+    /** Initial Login */
+    Route::get('/Willkommen',[\App\Http\Controllers\Frontend\InitialLoginController::class,'index'])->name("initial-login.index");
+    Route::post('/Willkommen',[\App\Http\Controllers\Frontend\InitialLoginController::class,'sendCode'])->name("initial-login.send-code");
+    Route::get('/Willkommen/{code}',[\App\Http\Controllers\Frontend\InitialLoginController::class,'setData'])->name("initial-login.set-data");
+    Route::post('/Willkommen/Finish',[\App\Http\Controllers\Frontend\InitialLoginController::class,'finish'])->name("initial-login.finish");
+
+
     /** Frontend */
     Route::middleware([FrontendAuth::class])->group(function() {
         Route::get("/", [DashboardController::class,'index'])->name("application");

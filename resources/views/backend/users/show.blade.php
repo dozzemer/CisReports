@@ -40,6 +40,15 @@
             </div>
         </div>
 
+        <div class="cis-panel">
+            <div class="cis-panel-headline">
+                <i class="fa fa-door-open"></i> Willkommen´s Code einrichten
+            </div>
+            <div class="pr-12">
+                @livewire("backend.user.welcome",['user' => $user])
+            </div>
+        </div>
+
         @if(!$user->group_user)
         <div class="cis-panel">
             <div class="cis-panel-headline">

@@ -53,6 +53,8 @@ Route::middleware([Installed::class,CheckAppAndDBVersion::class])->prefix('Appli
     Route::middleware([FrontendAuth::class])->group(function() {
         Route::get("/", [DashboardController::class,'index'])->name("application");
 
+        Route::get('/Userlist',[DashboardController::class,'userlist'])->name("userlist");
+
         /** Berichte */
         Route::get("/Bericht/Erstellen",[\App\Http\Controllers\Frontend\BerichtController::class,'createBericht'])->name("bericht.create-bericht");
         Route::get('/Bericht/{bericht}',[\App\Http\Controllers\Frontend\BerichtController::class,'showBericht'])->name("bericht.show-bericht");

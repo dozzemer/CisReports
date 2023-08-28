@@ -7,12 +7,13 @@
     "require": {
         "php": "^8.0.2",
         "barryvdh/laravel-debugbar": "^3.7",
+        "barryvdh/laravel-dompdf": "^2.0",
         "cis/cis-config": "dev-master",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "livewire/livewire": "^2.10"
+        "livewire/livewire": "^2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

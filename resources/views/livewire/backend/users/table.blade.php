@@ -26,6 +26,7 @@
                 @if($user_auth_method == "username")
                 <th class="p-2 text-left ">Benutzername</th>
                 @endif
+                <th>Welcome-Mode</th>
             </tr>
         </thead>
         <tbody>
@@ -51,6 +52,13 @@
                     @if($user_auth_method == "username")
                     <td class="p-2 text-left border-t">{{ $user->username }}</td>
                     @endif
+                    <td class="p-2 text-left border-t text-center">
+                        @if($user->welcomeMode)
+                            <i class="fa fa-dot-circle text-green-700"></i>
+                        @else
+                            <i class="fa fa-dot-circle text-red-700"></i>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
         </tbody>

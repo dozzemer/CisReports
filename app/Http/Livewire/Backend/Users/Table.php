@@ -22,10 +22,16 @@ class Table extends Component
     {
 
         if(!$this->searchString) {
-            $users = User::paginate(25);
+            $users = ModelsUser::paginate(25);
         }
         else {
-            $users = User::where('lastname','like','%'.$this->searchString.'%')->orWhere('firstname','like','%'.$this->searchString.'%')->orWhere('email','like','%'.$this->searchString.'%')->get();
+            $users = ModelsUser::where('lastname','like','%'.$this->searchString.'%')->orWhere('firstname','like','%'.$this->searchString.'%')->orWhere('email','like','%'.$this->searchString.'%')->get();
+        }
+
+        foreach($users as $user) {
+            if($user->inWelcomeMode()) {
+                $user->welcomeMode = true;
+            }
         }
 
         return view('livewire.backend.users.table',[

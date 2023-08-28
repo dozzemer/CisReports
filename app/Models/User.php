@@ -49,4 +49,11 @@ class User extends Authenticatable
     public function fullname() {
         return $this->firstname." ".$this->lastname;
     }
+
+    public function inWelcomeMode() {
+        if(InitialLogin::where("cis_row_id_user",$this->cis_row_id)->count()) {
+            return true;
+        }
+        return false;
+    }
 }

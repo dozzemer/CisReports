@@ -14,7 +14,7 @@ table.customTable td, table.customTable th {
   border-width: 1px;
   border-color: #000000;
   border-style: solid;
-  padding: 1px;
+  padding: 3px;
 }
 
 table.customTable thead {

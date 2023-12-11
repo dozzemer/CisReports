@@ -1,38 +1,32 @@
 <style>
-    table {
-        border: 1px solid #DEDEDF;
-        height: 100%;
-        width: 100%;
-        table-layout: fixed;
-        border-collapse: collapse;
-        border-spacing: 1px;
-        text-align: left;
-        font-size: 0.8em;
-    }
-    caption {
-        caption-side: top;
-        text-align: left;
-    }
-    th {
-        border: 1px solid #DEDEDF;
-        background-color: #ECEFF1;
-        color: #000000;
-        padding: 5px;
-    }
-    td {
-        border: 1px solid #DEDEDF;
-        background-color: #FFFFFF;
-        color: #000000;
-        padding-left: 5px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-    }
+table.customTable {
+  font-size: 10px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  color: #000000;
+}
+
+table.customTable td, table.customTable th {
+  border-width: 1px;
+  border-color: #000000;
+  border-style: solid;
+  padding: 1px;
+}
+
+table.customTable thead {
+  background-color: #F8F8F8;
+}
+
 </style>
-<table>
+<table class="customTable">
     <thead>
         <tr>
-            <th style="text-align: left;">Name</th>
-            <th></th>
+            <th style="text-align: left; width: 30%;">Name</th>
+            <th style="width: 70%;"></th>
         </tr>
     </thead>
     <tbody>

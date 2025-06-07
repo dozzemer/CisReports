@@ -9,7 +9,7 @@ use App\Models\PersonalBericht;
 use App\Models\User;
 use Livewire\Component;
 
-class Personaleditor extends Component
+class EditBericht extends Component
 {
     public $bericht;
     public $jobs;

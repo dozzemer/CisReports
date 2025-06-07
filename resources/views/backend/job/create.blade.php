@@ -21,6 +21,12 @@
                     <option value="0" @if(old("fahrzeug",0) == "0") selected @endif>Nein</option>
                 </select>
             </div>
+            <div class="cis-form-group">
+                <label>
+                    <input type="checkbox" name="is_fuehrungskraft" value="1" {{ old('is_fuehrungskraft', $job->is_fuehrungskraft ?? false) ? 'checked' : '' }}>
+                    Führungskraft
+                </label>
+            </div>
 
             <button type="submit" class="cis-submit">Speichern</button>
         </form>

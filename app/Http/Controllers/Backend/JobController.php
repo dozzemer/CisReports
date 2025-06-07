@@ -34,6 +34,9 @@ class JobController extends Controller
             'name',
         ]));
 
+        // Führungskraft setzen
+        $newJob->is_fuehrungskraft = $request->has('is_fuehrungskraft');
+
         if($request->get('fahrzeug') == 1) {
             foreach(Job::all() as $jobItem) {
                 $jobItem->fahrzeug = 0;
@@ -58,6 +61,10 @@ class JobController extends Controller
             'name',
             'fahrzeug',
         ]));
+
+        // Führungskraft setzen
+        $job->is_fuehrungskraft = $request->has('is_fuehrungskraft');
+
         $job->save();
 
         session()->flash('success','Funktion wurde hinzugefügt.');

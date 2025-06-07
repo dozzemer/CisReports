@@ -25,7 +25,7 @@ class CreateSettingsSeeder extends Seeder
 
         DB::table('cis_config')->insert([
             'cis_config_key' => 'db_version',
-            'cis_config_value' => config("app.version"),
+            'cis_config_value' => config("app.version", '0.0.1'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

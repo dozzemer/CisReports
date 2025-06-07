@@ -13,5 +13,10 @@ class Job extends Model
     protected $fillable = [
         'name',
         'fahrzeug',
+        'is_fuehrungskraft',
+    ];
+
+    protected $casts = [
+        'is_fuehrungskraft' => 'boolean',
     ];
 }

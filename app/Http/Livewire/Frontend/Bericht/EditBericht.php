@@ -52,6 +52,6 @@ class EditBericht extends Component
 
     public function render()
     {
-        return view('livewire.frontend.bericht.personaleditor');
+        return view('livewire.frontend.bericht.edit-bericht');
     }
 }

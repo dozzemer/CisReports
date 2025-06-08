@@ -8,7 +8,7 @@
     }
 
     .cis-table > thead > tr > th {
-        @apply p-2 text-left
+        @apply p-2 text-left sticky bg-white top-0 z-10
     }
 
     .cis-table > tbody > tr > td {

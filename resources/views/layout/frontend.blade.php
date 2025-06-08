@@ -23,7 +23,7 @@
             </div>
             <div class="flex space-x-2 ml-auto">
                 <div class="">
-                    <a href="{{ route("application") }}" class="bg-slate-700 text-white p-1 px-3 rounded shadow-md text-sm"><i class="fa fa-home mr-2"></i>Dashbaord</a>
+                    <a href="{{ route("application") }}" class="bg-slate-700 text-white p-1 px-3 rounded shadow-md text-sm"><i class="fa fa-home mr-2"></i>Dashboard</a>
                 </div>
                 @if(!auth()->user()->group_user)
                 <div class="">

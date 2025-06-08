@@ -39,11 +39,22 @@ class Personaleditor extends Component
     }
 
     public function personalUpdate() {
-        foreach(PersonalBericht::where('bericht',$this->bericht->cis_row_id)->get() as $bericht) {
-            if($bericht->einsatzmittel) {
-                $em = $this->einsatzmittel->where('cis_row_id',$bericht->einsatzmittel)->first();
-                $em->mannschaft++;
-            }
+        foreach($this->einsatzmittel as $em) {
+            $personal = PersonalBericht::where('bericht', $this->bericht->cis_row_id)
+                ->where('einsatzmittel', $em->cis_row_id)
+                ->get();
+
+            // IDs aller Führungs-Jobs
+            $fuehrung_job_ids = $this->jobs->where('is_fuehrungskraft', true)->pluck('cis_row_id')->toArray();
+
+            // Zähle Führungskräfte pro Einsatzmittel (max. 1 je Typ)
+            $fuehrung_count = $personal->whereIn('job', $fuehrung_job_ids)->unique('job')->count();
+
+            // Gesamt
+            $gesamt_count = $personal->count();
+
+            $em->fuehrung_count = $fuehrung_count;
+            $em->gesamt_count = $gesamt_count;
         }
     }
 }

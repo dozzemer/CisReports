@@ -65,6 +65,7 @@ class PersonalRow extends Component
         }
         $this->personalBericht->job = $this->job;
         $this->personalBericht->save();
+        $this->emit('personal-update');
     }
 
 

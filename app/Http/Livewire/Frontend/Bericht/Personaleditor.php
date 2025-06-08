@@ -54,7 +54,7 @@ class Personaleditor extends Component
             $gesamt_count = $personal->count();
 
             $em->fuehrung_count = $fuehrung_count;
-            $em->gesamt_count = $gesamt_count;
+            $em->gesamt_count = $gesamt_count - $fuehrung_count;
         }
     }
 }

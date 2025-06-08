@@ -1,7 +1,7 @@
 <div style="max-height: 400px; overflow: auto;">
     @include("layout.error_success")
     <table class="cis-table">
-        <thead class="sticky top-0 bg-white z-10">
+        <thead>
             <tr>
                 <th>Name</th>
                 <th>Funktion</th>

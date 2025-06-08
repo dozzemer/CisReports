@@ -12,12 +12,12 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class DashboardController extends Controller
 {
     public function index() {
-        return view("frontend.dashbaord.index");
+        return view("frontend.dashboard.index");
     }
 
     public function userlist() {
         $data = User::orderBy("lastname")->get()->toArray();
-        $pdf = Pdf::loadView('frontend.dashbaord.userlist.userlist', ['data' => $data]);
+        $pdf = Pdf::loadView('frontend.dashboard.userlist.userlist', ['data' => $data]);
         return $pdf->download("Userlist-".Carbon::now()->format("d-m-Y-H-i-s"));
     }
 }

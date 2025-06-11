@@ -14,5 +14,5 @@
         </div>
     </div>
 
-    <button class="cis-submit" wire:click="createBericht">Bericht angelgen und bearbeiten</button>
+    <button class="cis-submit" wire:click="createBericht">Bericht anlegen und bearbeiten</button>
 </div>

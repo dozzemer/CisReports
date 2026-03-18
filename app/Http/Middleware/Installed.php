@@ -16,7 +16,7 @@ class Installed
      */
     public function handle(Request $request, Closure $next)
     {
-        if(env('APP_INSTALLED') !== true) {
+        if (!config('app.installed')) {
             return redirect()->route("install.index");
         }
         return $next($request);

@@ -18,7 +18,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
     'version' => env('APP_VERSION',null),
-
+    'installed' => env('APP_INSTALLED', false),
+    
     /*
     |--------------------------------------------------------------------------
     | Application Environment
